@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>〇〇大学スポーツ医学センター</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Meiryo", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #ffffff;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .header-info {
+      text-align: right;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Navigation */
+    .nav-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+    }
+
+    .nav a {
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #1e3a8a;
+      border-bottom-color: #3b82f6;
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Hero Section */
+    .hero {
+        display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;  
+      min-height: 100vh;
+      background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
+                  url('./2.webp') center/cover;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      height: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #ef4444;
+      color: white;
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    }
+
+    .cta-button:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h3 {
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      margin: 1rem auto;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #1e3a8a;
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Flow Section */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .flow-step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .flow-step h4 {
+      margin: 1rem 0 0.5rem;
+      color: #1e3a8a;
+    }
+
+    /* Services */
+  .section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.circle-layout {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Circle items */
+.circle-item {
+  position: absolute;
+  width: 120px;
+  text-align: center;
+}
+
+.circle-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0 auto 0.5rem;
+}
+
+/* Positioning around the center */
+.item1 { top: 0; left: 50%; transform: translate(-50%, 0); }
+.item2 { top: 20%; right: 0; transform: translate(0, -50%); }
+.item3 { bottom: 20%; right: 0; transform: translate(0, 50%); }
+.item4 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+.item5 { bottom: 20%; left: 0; transform: translate(0, 50%); }
+.item6 { top: 20%; left: 0; transform: translate(0, -50%); }
+
+    /* Contact Form */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .contact-info {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    /* News Section */
+    .news-list {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .news-item {
+      padding: 1.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      gap: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .news-item:hover {
+      background-color: #f8fafc;
+    }
+
+    .news-date {
+      background: #3b82f6;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.8rem;
+      min-width: 80px;
+    }
+
+    .news-content h4 {
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 3rem 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <div class="logo">
+      <div class="logo-icon">医</div>
+      <h1>〇〇大学スポーツ医学センター</h1>
+    </div>
+    <div class="header-info">
+      <div>📞 03-1234-5678</div>
+      <div>🕐 平日 9:00-17:00</div>
+      <div>📧 info@sports-medical.ac.jp</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-container">
+  <div class="nav">
+    <a href="#about">センターについて</a>
+    <a href="#flow">受診の流れ</a>
+    <a href="#services">診療内容</a>
+    <a href="#staff">スタッフ紹介</a>
+    <a href="#news">お知らせ</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>アスリートの夢を支える<br>最先端のスポーツ医療</h2>
+    <p>学生から社会人、プロアスリートまで<br>すべてのスポーツ愛好家の健康とパフォーマンス向上をサポートします</p>
+    <a href="#contact" class="cta-button">初診予約・お問い合わせ</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="section-title">
+    <h3>センターについて</h3>
+    <p>最高水準のスポーツ医学で、あなたの可能性を最大限に引き出します</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>当センターは〇〇大学病院内に設置された、スポーツ医学に特化した専門医療機関です。整形外科、リハビリテーション科、スポーツ内科の専門医をはじめ、理学療法士、管理栄養士、心理カウンセラーなど多職種の専門スタッフが連携し、アスリートの健康管理から競技復帰まで総合的にサポートいたします。</p>
+      <p>最新の医療機器と科学的根拠に基づいた診療により、スポーツ外傷・障害の早期診断・治療、パフォーマンス向上のためのコンディショニング指導、メンタルサポートまで幅広く対応しております。</p>
+    </div>
+    <div class="about-image">
+      <img src="./unnamed.png" alt="センター内部">
+    </div>
+  </div>
+</section>
+
+<section id="flow" class="section">
+  <div class="section-title">
+    <h3>受診の流れ</h3>
+    <p>初診から治療完了まで、安心してご利用いただけるよう丁寧にサポートします</p>
+  </div>
+  <div class="flow-steps">
+    <div class="flow-step" data-step="1">
+      <h4>予約・お問い合わせ</h4>
+      <p>お電話またはWebフォームにて初診予約をお取りください。症状や競技歴についてお聞かせください。</p>
+    </div>
+    <div class="flow-step" data-step="2">
+      <h4>問診・診察</h4>
+      <p>専門医による詳細な問診と身体診察を行い、症状の原因と程度を正確に把握します。</p>
+    </div>
+    <div class="flow-step" data-step="3">
+      <h4>検査・診断</h4>
+      <p>必要に応じてMRI、CT、超音波検査などの画像診断や各種機能検査を実施します。</p>
+    </div>
+    <div class="flow-step" data-step="4">
+      <h4>治療・リハビリ</h4>
+      <p>個別の治療プランに基づき、医学的治療とリハビリテーションを並行して行います。</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-title">
+    <h3>診療内容</h3>
+    <p>スポーツ医学のあらゆる分野で、専門的で質の高い医療を提供します</p>
+  </div>
+
+  <div class="circle-layout">
+    <div class="center-circle">
+      <img src="center-athlete.png" alt="Center" />
+    </div>
+
+    <div class="circle-item item1">
+      <div class="circle-icon">🏥</div>
+      <h4>スポーツ外傷・障害</h4>
+    </div>
+    <div class="circle-item item2">
+      <div class="circle-icon">💪</div>
+      <h4>リハビリ</h4>
+    </div>
+    <div class="circle-item item3">
+      <div class="circle-icon">📊</div>
+      <h4>パフォーマンス評価</h4>
+    </div>
+    <div class="circle-item item4">
+      <div class="circle-icon">🍎</div>
+      <h4>栄養指導</h4>
+    </div>
+    <div class="circle-item item5">
+      <div class="circle-icon">🧠</div>
+      <h4>メンタル</h4>
+    </div>
+    <div class="circle-item item6">
+      <div class="circle-icon">⚕️</div>
+      <h4>メディカルチェック</h4>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="staff" class="section">
+  <div class="section-title">
+    <h3>スタッフ紹介</h3>
+    <p>各分野の専門家が、チーム一丸となってサポートします</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <img src="./image1.webp" alt="整形外科医">
+      <div class="card-content">
+        <h4>整形外科専門医</h4>
+        <p>スポーツ外傷・障害の診断・治療から手術まで、豊富な経験を持つ専門医チームが対応します。</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./image2.webp" alt="理学療法士">
+      <div class="card-content">
+        <h4>理学療法士</h4>
+        <p>スポーツリハビリテーションのスペシャリスト。競技復帰に向けた機能回復訓練を指導します。</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./image3.webp" alt="管理栄養士">
+      <div class="card-content">
+        <h4>管理栄養士</h4>
+        <p>スポーツ栄養学の専門知識を活かし、競技力向上と健康維持のための食事指導を行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="section">
+  <div class="section-title">
+    <h3>お知らせ・メディア掲載</h3>
+    <p>最新情報をお届けします</p>
+  </div>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">
+        <div>2025</div>
+        <div>01/20</div>
+      </div>
+      <div class="news-content">
+        <h4>新春特別講演会「アスリートのための栄養戦略」開催のお知らせ</h4>
+        <p>2月15日（土）14:00より、当センターにて管理栄養士による講演会を開催いたします。参加無料・要予約。</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">
+        <div>2025</div>
+        <div>01/10</div>
+      </div>
+      <div class="news-content">
+        <h4>スポーツ医学雑誌に当センターの研究論文が掲載されました</h4>
+        <p>「競技復帰期間短縮に向けた新しいリハビリテーションプロトコルの効果」について発表いたしました。</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">
+        <div>2024</div>
+        <div>12/25</div>
+      </div>
+      <div class="news-content">
+        <h4>年末年始の休診のお知らせ</h4>
+        <p>12月29日（日）から1月3日（金）まで休診とさせていただきます。緊急時は大学病院救急外来をご利用ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access" class="section">
+  <div class="section-title">
+    <h3>アクセス情報</h3>
+    <p>〇〇大学病院内にございます</p>
+  </div>
+  <div class="contact-info">
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <h4>所在地</h4>
+        <p>〒000-0000 東京都〇〇区〇〇町1-1-1<br>〇〇大学病院 本館3階</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🚇</div>
+      <div>
+        <h4>アクセス</h4>
+        <p>JR〇〇駅東口より徒歩5分<br>地下鉄〇〇線〇〇駅2番出口より徒歩3分</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🚗</div>
+      <div>
+        <h4>駐車場</h4>
+        <p>病院駐車場をご利用ください<br>30分まで無料、以降30分毎に200円</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-title">
+    <h3>お問い合わせ</h3>
+    <p>お気軽にご相談ください</p>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="name">お名前 *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="sport">競技種目</label>
+          <input type="text" id="sport" name="sport" placeholder="例：サッカー、テニス、陸上競技">
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容 *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="症状や相談内容をできるだけ詳しくお聞かせください"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">送信する</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h4 style="margin-bottom: 1.5rem; color: #1e3a8a;">診療予約・お問い合わせ</h4>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>電話予約</h4>
+          <p>03-1234-5678<br>
+          平日 9:00-17:00<br>
+          土曜 9:00-12:00</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <h4>メール</h4>
+          <p>info@sports-medical.ac.jp<br>
+          24時間受付（返信は営業時間内）</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🏥</div>
+        <div>
+          <h4>緊急時</h4>
+          <p>〇〇大学病院 救急外来<br>
+          03-1234-9999（24時間）</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📋</div>
+        <div>
+          <h4>初診時の持参物</h4>
+          <p>・健康保険証<br>
+          ・紹介状（お持ちの場合）<br>
+          ・画像データ（MRI・CTなど）<br>
+          ・お薬手帳</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>〇〇大学スポーツ医学センター</h4>
+      <p>〒000-0000<br>
+      東京都〇〇区〇〇町1-1-1<br>
+      〇〇大学病院 本館3階</p>
+      <p>TEL: 03-1234-5678<br>
+      FAX: 03-1234-5679<br>
+      E-mail: info@sports-medical.ac.jp</p>
+    </div>
+    <div class="footer-section">
+      <h4>診療時間</h4>
+      <p><strong>平日</strong><br>
+      午前 9:00-12:00<br>
+      午後 14:00-17:00</p>
+      <p><strong>土曜</strong><br>
+      午前 9:00-12:00</p>
+      <p><strong>休診日</strong><br>
+      日曜・祝日・年末年始</p>
+    </div>
+    <div class="footer-section">
+      <h4>関連リンク</h4>
+      <p><a href="#">〇〇大学病院</a><br>
+      <a href="#">〇〇大学医学部</a><br>
+      <a href="#">日本スポーツ医学会</a><br>
+      <a href="#">日本整形外科学会</a><br>
+      <a href="#">アンチドーピング機構</a></p>
+    </div>
+    <div class="footer-section">
+      <h4>認定・所属学会</h4>
+      <p>・日本スポーツ医学会認定施設<br>
+      ・日本整形外科学会専門医制度研修施設<br>
+      ・日本リハビリテーション医学会研修施設<br>
+      ・スポーツドクター認定施設</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 〇〇大学スポーツ医学センター All Rights Reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">プライバシーポリシー</a> | <a href="#" style="color: rgba(255,255,255,0.7);">サイトマップ</a></p>
+  </div>
+</footer>
+
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Form submission handler
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('お問い合わせを受け付けました。2-3営業日以内にご返信させていただきます。');
+  this.reset();
+});
+
+// Add scroll effect to navigation
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.nav-container');
+  if (window.scrollY > 100) {
+    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Add animation on scroll for sections
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>

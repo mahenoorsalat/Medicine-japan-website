@@ -12,487 +12,690 @@
     }
 
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Meiryo", sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Meiryo", sans-serif;
+      line-height: 1.8;
+      color: #333333;
       background-color: #ffffff;
+      font-size: 14px;
     }
 
     /* Header */
     .header {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-      color: white;
+      background: #ffffff;
+      border-bottom: 3px solid #0066cc;
       position: relative;
-      overflow: hidden;
     }
 
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      opacity: 0.3;
+    .header-top {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 8px 0;
+      border-bottom: 1px solid #dee2e6;
     }
 
-    .header-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
+    .header-top-content {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 1.5rem 2rem;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      font-size: 12px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .header h1 {
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-    }
-
-    .header-info {
-      text-align: right;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    /* Navigation */
-    .nav-container {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-    }
-
-    .nav a {
-      padding: 1rem 1.5rem;
+    .header-links a {
+      color: #666;
       text-decoration: none;
-      color: #333;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
+      margin-left: 15px;
     }
 
-    .nav a:hover {
-      color: #1e3a8a;
-      border-bottom-color: #3b82f6;
-      background-color: rgba(59, 130, 246, 0.05);
+    .header-main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* Hero Section */
-    .hero {
-        display: flex;
-    justify-content: center;   /* center horizontally */
-    align-items: center;  
-      min-height: 100vh;
-      background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
-                  url('./2.webp') center/cover;
-      color: white;
-      text-align: center;
-      padding: 6rem 2rem;
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-mark {
+      width: 60px;
+      height: 60px;
+      background: #0066cc;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
       position: relative;
     }
 
-    .hero-content {
-      height: 100%;
-      max-width: 800px;
+    .logo-mark svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .logo-text h1 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #0066cc;
+      margin-bottom: 3px;
+    }
+
+    .logo-text p {
+      font-size: 11px;
+      color: #666;
+      font-weight: normal;
+    }
+
+    .header-contact {
+      text-align: right;
+    }
+
+    .phone-number {
+      font-size: 20px;
+      color: #0066cc;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .hours {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Navigation */
+    .nav {
+      background: #0066cc;
+      border-top: 1px solid #0052a3;
+    }
+
+    .nav-content {
+      max-width: 1000px;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav a {
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav a:last-child {
+      border-right: none;
+    }
+
+    /* Hero Section with Vision/Mission */
+    .hero {
+      background: linear-gradient(rgba(0, 102, 204, 0.85), rgba(0, 102, 204, 0.85)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><rect fill="%23f8f9fa" width="1000" height="400"/><circle fill="%23e9ecef" cx="200" cy="100" r="50"/><circle fill="%23dee2e6" cx="800" cy="300" r="80"/><rect fill="%23ced4da" x="400" y="150" width="200" height="100" rx="10"/></svg>');
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 32px;
       font-weight: 300;
-      letter-spacing: 0.05em;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    .hero-subtitle {
+      font-size: 16px;
+      margin-bottom: 40px;
       opacity: 0.95;
+      line-height: 1.6;
     }
 
-    .cta-button {
-      display: inline-block;
-      background: #ef4444;
-      color: white;
-      padding: 1rem 2.5rem;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    .vision-mission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
     }
 
-    .cta-button:hover {
-      background: #dc2626;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    .vision-box, .mission-box {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .vision-box h3, .mission-box h3 {
+      font-size: 18px;
+      color: #0066cc;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .vision-box h3 svg, .mission-box h3 svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: #0066cc;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     /* Section Styling */
     .section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+      margin: 50px 0;
+      padding: 40px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-title h3 {
-      font-size: 2rem;
-      color: #1e3a8a;
-      margin-bottom: 0.5rem;
-      font-weight: 300;
+      font-size: 24px;
+      color: #0066cc;
+      font-weight: 500;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
     }
 
     .section-title::after {
       content: '';
       display: block;
       width: 60px;
-      height: 3px;
-      background: linear-gradient(to right, #3b82f6, #06b6d4);
-      margin: 1rem auto;
+      height: 2px;
+      background: #0066cc;
+      margin: 8px auto 0;
     }
 
-    /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    .card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #1e3a8a;
+    .section-subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-top: 10px;
     }
 
     /* About Section */
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      margin-top: 2rem;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: start;
     }
 
     .about-text {
-      font-size: 1.1rem;
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+    }
+
+    .about-text h4 {
+      color: #0066cc;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
       line-height: 1.8;
     }
 
-    .about-image {
-      text-align: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Flow Section */
-    .flow-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .flow-step {
-      text-align: center;
-      padding: 2rem 1rem;
+    .about-features {
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      position: relative;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    .flow-step::before {
-      content: attr(data-step);
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #3b82f6, #06b6d4);
-      color: white;
+    .feature-item {
+      padding: 20px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
       width: 40px;
       height: 40px;
+      background: #e8f4fd;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #0066cc;
+    }
+
+    .feature-text {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .feature-text strong {
+      color: #0066cc;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, #0066cc, #0052a3);
+    }
+
+    .service-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #0066cc, #0052a3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    .service-card h4 {
+      font-size: 14px;
+      color: #0066cc;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .service-card p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Flow Section */
+    .flow-container {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .flow-step {
+      background: white;
+      border-radius: 8px;
+      padding: 25px 15px;
+      text-align: center;
+      position: relative;
+      border-top: 3px solid #0066cc;
+    }
+
+    .flow-number {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      background: #0066cc;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
       font-weight: bold;
-      font-size: 1.2rem;
     }
 
     .flow-step h4 {
-      margin: 1rem 0 0.5rem;
-      color: #1e3a8a;
+      font-size: 13px;
+      color: #0066cc;
+      margin: 15px 0 8px;
+      font-weight: 500;
     }
 
-    /* Services */
-  .section-title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+    .flow-step p {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.6;
+    }
 
-.circle-layout {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-}
+    /* Staff Section */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
 
-.center-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 180px;
-  height: 180px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  overflow: hidden;
-  background: #f3f4f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .staff-card {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
 
-.center-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .staff-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
-/* Circle items */
-.circle-item {
-  position: absolute;
-  width: 120px;
-  text-align: center;
-}
+    .staff-image {
+      height: 180px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.circle-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  margin: 0 auto 0.5rem;
-}
+    .staff-image svg {
+      width: 80px;
+      height: 80px;
+      fill: #ced4da;
+    }
 
-/* Positioning around the center */
-.item1 { top: 0; left: 50%; transform: translate(-50%, 0); }
-.item2 { top: 20%; right: 0; transform: translate(0, -50%); }
-.item3 { bottom: 20%; right: 0; transform: translate(0, 50%); }
-.item4 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
-.item5 { bottom: 20%; left: 0; transform: translate(0, 50%); }
-.item6 { top: 20%; left: 0; transform: translate(0, -50%); }
+    .staff-info {
+      padding: 20px;
+    }
 
-    /* Contact Form */
+    .staff-info h4 {
+      font-size: 14px;
+      color: #0066cc;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .staff-role {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .staff-info p {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* News Section */
+    .news-container {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .news-item {
+      padding: 20px 25px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .news-item:hover {
+      background-color: #f8f9fa;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      background: #0066cc;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      text-align: center;
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+
+    .news-content h4 {
+      font-size: 13px;
+      color: #0066cc;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .news-content p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .contact-form {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 20px;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 5px;
+      font-size: 12px;
       font-weight: 500;
       color: #333;
     }
 
+    .required {
+      color: #dc3545;
+      margin-left: 3px;
+    }
+
     .form-group input,
+    .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 0.75rem;
-      border: 2px solid #e5e5e5;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 10px 12px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: inherit;
       transition: border-color 0.3s ease;
     }
 
     .form-group input:focus,
+    .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #3b82f6;
+      border-color: #0066cc;
+      box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
     }
 
     .submit-btn {
-      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      background: #0066cc;
       color: white;
-      padding: 1rem 2rem;
+      padding: 12px 30px;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 4px;
+      font-size: 13px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
+      width: 100%;
     }
 
     .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+      background: #0052a3;
     }
 
     .contact-info {
-      background: #f8fafc;
-      padding: 2rem;
-      border-radius: 15px;
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 30px;
     }
 
     .contact-item {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
     }
 
     .contact-icon {
       width: 40px;
       height: 40px;
-      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      background: #e8f4fd;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      margin-right: 15px;
+      flex-shrink: 0;
     }
 
-    /* News Section */
-    .news-list {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #0066cc;
     }
 
-    .news-item {
-      padding: 1.5rem;
-      border-bottom: 1px solid #f0f0f0;
-      display: flex;
-      gap: 1rem;
-      transition: background-color 0.3s ease;
+    .contact-details h4 {
+      font-size: 13px;
+      color: #0066cc;
+      margin-bottom: 5px;
+      font-weight: 500;
     }
 
-    .news-item:hover {
-      background-color: #f8fafc;
-    }
-
-    .news-date {
-      background: #3b82f6;
-      color: white;
-      padding: 0.5rem;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 0.8rem;
-      min-width: 80px;
-    }
-
-    .news-content h4 {
-      color: #1e3a8a;
-      margin-bottom: 0.5rem;
+    .contact-details p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
     }
 
     /* Footer */
     .footer {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      background: #0066cc;
       color: white;
-      padding: 3rem 2rem 1rem;
-      margin-top: 4rem;
+      margin-top: 60px;
+      padding: 40px 0 20px;
     }
 
     .footer-content {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
 
     .footer-section h4 {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-weight: 500;
     }
 
     .footer-section p,
     .footer-section a {
+      font-size: 12px;
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
-      line-height: 1.6;
+      line-height: 1.8;
+      display: block;
+      margin-bottom: 3px;
     }
 
     .footer-section a:hover {
@@ -500,79 +703,104 @@
     }
 
     .footer-bottom {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 20px 0;
       text-align: center;
-      margin-top: 2rem;
-      padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 30px;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
       color: rgba(255, 255, 255, 0.7);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .header-content {
+      .header-main {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 15px;
       }
 
-      .nav {
+      .nav-content {
         flex-direction: column;
-        align-items: center;
       }
 
-      .hero h2 {
-        font-size: 2rem;
+      .nav a {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 25px;
       }
 
-      .cards {
+      .services-grid,
+      .staff-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
-    }
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+      .flow-steps {
+        grid-template-columns: 1fr;
+        gap: 15px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
 
-    .section {
-      animation: fadeInUp 0.8s ease-out;
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
     }
   </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
-  <div class="header-content">
-    <div class="logo">
-      <div class="logo-icon">医</div>
-      <h1>〇〇大学スポーツ医学センター</h1>
+  <div class="header-top">
+    <div class="header-top-content">
+      <div class="site-info">〇〇大学医学部附属病院内</div>
+      <div class="header-links">
+        <a href="#">サイトマップ</a>
+        <a href="#">お問い合わせ</a>
+        <a href="#">English</a>
+      </div>
     </div>
-    <div class="header-info">
-      <div>📞 03-1234-5678</div>
-      <div>🕐 平日 9:00-17:00</div>
-      <div>📧 info@sports-medical.ac.jp</div>
+  </div>
+  <div class="header-main">
+    <div class="logo-area">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24">
+          <path d="M19.5 3.09L15 5.32l-4-2.23l-4 2.23L2.5 3.09A1 1 0 001 4v16a1 1 0 001.5.91L7 18.68l4 2.23l4-2.23l4.5 2.23A1 1 0 0020 20V4a1 1 0 00-.5-.91zM8 6.5l3 1.68l3-1.68v11l-3 1.68l-3-1.68v-11z"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <h1>〇〇大学スポーツ医学センター</h1>
+        <p>Sports Medicine Center, ○○ University</p>
+      </div>
+    </div>
+    <div class="header-contact">
+      <div class="phone-number">03-1234-5678</div>
+      <div class="hours">平日 9:00-17:00 / 土曜 9:00-12:00</div>
     </div>
   </div>
 </header>
 
-<nav class="nav-container">
-  <div class="nav">
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-content">
     <a href="#about">センターについて</a>
-    <a href="#flow">受診の流れ</a>
     <a href="#services">診療内容</a>
+    <a href="#flow">受診の流れ</a>
     <a href="#staff">スタッフ紹介</a>
     <a href="#news">お知らせ</a>
     <a href="#access">アクセス</a>
@@ -580,305 +808,535 @@
   </div>
 </nav>
 
+<!-- Hero Section with Vision/Mission -->
 <section class="hero">
   <div class="hero-content">
-    <h2>アスリートの夢を支える<br>最先端のスポーツ医療</h2>
-    <p>学生から社会人、プロアスリートまで<br>すべてのスポーツ愛好家の健康とパフォーマンス向上をサポートします</p>
-    <a href="#contact" class="cta-button">初診予約・お問い合わせ</a>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="section-title">
-    <h3>センターについて</h3>
-    <p>最高水準のスポーツ医学で、あなたの可能性を最大限に引き出します</p>
-  </div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>当センターは〇〇大学病院内に設置された、スポーツ医学に特化した専門医療機関です。整形外科、リハビリテーション科、スポーツ内科の専門医をはじめ、理学療法士、管理栄養士、心理カウンセラーなど多職種の専門スタッフが連携し、アスリートの健康管理から競技復帰まで総合的にサポートいたします。</p>
-      <p>最新の医療機器と科学的根拠に基づいた診療により、スポーツ外傷・障害の早期診断・治療、パフォーマンス向上のためのコンディショニング指導、メンタルサポートまで幅広く対応しております。</p>
-    </div>
-    <div class="about-image">
-      <img src="./unnamed.png" alt="センター内部">
-    </div>
-  </div>
-</section>
-
-<section id="flow" class="section">
-  <div class="section-title">
-    <h3>受診の流れ</h3>
-    <p>初診から治療完了まで、安心してご利用いただけるよう丁寧にサポートします</p>
-  </div>
-  <div class="flow-steps">
-    <div class="flow-step" data-step="1">
-      <h4>予約・お問い合わせ</h4>
-      <p>お電話またはWebフォームにて初診予約をお取りください。症状や競技歴についてお聞かせください。</p>
-    </div>
-    <div class="flow-step" data-step="2">
-      <h4>問診・診察</h4>
-      <p>専門医による詳細な問診と身体診察を行い、症状の原因と程度を正確に把握します。</p>
-    </div>
-    <div class="flow-step" data-step="3">
-      <h4>検査・診断</h4>
-      <p>必要に応じてMRI、CT、超音波検査などの画像診断や各種機能検査を実施します。</p>
-    </div>
-    <div class="flow-step" data-step="4">
-      <h4>治療・リハビリ</h4>
-      <p>個別の治療プランに基づき、医学的治療とリハビリテーションを並行して行います。</p>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="section">
-  <div class="section-title">
-    <h3>診療内容</h3>
-    <p>スポーツ医学のあらゆる分野で、専門的で質の高い医療を提供します</p>
-  </div>
-
-  <div class="circle-layout">
-    <div class="center-circle">
-      <img src="center-athlete.png" alt="Center" />
-    </div>
-
-    <div class="circle-item item1">
-      <div class="circle-icon">🏥</div>
-      <h4>スポーツ外傷・障害</h4>
-    </div>
-    <div class="circle-item item2">
-      <div class="circle-icon">💪</div>
-      <h4>リハビリ</h4>
-    </div>
-    <div class="circle-item item3">
-      <div class="circle-icon">📊</div>
-      <h4>パフォーマンス評価</h4>
-    </div>
-    <div class="circle-item item4">
-      <div class="circle-icon">🍎</div>
-      <h4>栄養指導</h4>
-    </div>
-    <div class="circle-item item5">
-      <div class="circle-icon">🧠</div>
-      <h4>メンタル</h4>
-    </div>
-    <div class="circle-item item6">
-      <div class="circle-icon">⚕️</div>
-      <h4>メディカルチェック</h4>
-    </div>
-  </div>
-</section>
-
-
-
-<section id="staff" class="section">
-  <div class="section-title">
-    <h3>スタッフ紹介</h3>
-    <p>各分野の専門家が、チーム一丸となってサポートします</p>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <img src="./image1.webp" alt="整形外科医">
-      <div class="card-content">
-        <h4>整形外科専門医</h4>
-        <p>スポーツ外傷・障害の診断・治療から手術まで、豊富な経験を持つ専門医チームが対応します。</p>
+    <h2>アスリートの夢を医学で支える</h2>
+    <p class="hero-subtitle">
+      学生アスリートからプロフェッショナルまで<br>
+      すべてのスポーツ愛好家の健康とパフォーマンス向上を総合的にサポートします
+    </p>
+    
+    <div class="vision-mission">
+      <div class="vision-box">
+        <h3>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          ビジョン
+        </h3>
+        <p>スポーツ医学の最先端技術と研究成果を活用し、アスリートの競技力向上と健康維持を支援する中核施設として、地域スポーツ界の発展に貢献します。</p>
       </div>
-    </div>
-    <div class="card">
-      <img src="./image2.webp" alt="理学療法士">
-      <div class="card-content">
-        <h4>理学療法士</h4>
-        <p>スポーツリハビリテーションのスペシャリスト。競技復帰に向けた機能回復訓練を指導します。</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="./image3.webp" alt="管理栄養士">
-      <div class="card-content">
-        <h4>管理栄養士</h4>
-        <p>スポーツ栄養学の専門知識を活かし、競技力向上と健康維持のための食事指導を行います。</p>
+      <div class="mission-box">
+        <h3>
+          <svg viewBox="0 0 24 24">
+            <path d="M9 12l2 2l4-4m6 2a9 9 0 11-18 0a9 9 0 0118 0z"/>
+          </svg>
+          ミッション
+        </h3>
+        <p>多職種専門スタッフの連携により、スポーツ外傷・障害の予防から治療、競技復帰まで一貫したサポートを提供し、アスリートの可能性を最大限に引き出します。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="news" class="section">
-  <div class="section-title">
-    <h3>お知らせ・メディア掲載</h3>
-    <p>最新情報をお届けします</p>
-  </div>
-  <div class="news-list">
-    <div class="news-item">
-      <div class="news-date">
-        <div>2025</div>
-        <div>01/20</div>
+<div class="main-content">
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <h3 class="section-title">センターについて</h3>
+      <p class="section-subtitle">About Our Center</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h4>〇〇大学スポーツ医学センターの特徴</h4>
+        <p>
+          当センターは〇〇大学医学部附属病院内に設置された、スポーツ医学に特化した専門医療機関です。整形外科、リハビリテーション科、スポーツ内科の専門医をはじめ、理学療法士、管理栄養士、心理カウンセラーなど多職種の専門スタッフが連携し、アスリートの健康管理から競技復帰まで総合的にサポートいたします。
+        </p>
+        <p>
+          最新の医療機器と科学的根拠に基づいた診療により、スポーツ外傷・障害の早期診断・治療はもちろん、パフォーマンス向上のためのコンディショニング指導、メンタルサポートまで幅広く対応。学生アスリートから社会人、プロアスリートまで、すべてのスポーツ愛好家の夢の実現をお手伝いします。
+        </p>
       </div>
-      <div class="news-content">
-        <h4>新春特別講演会「アスリートのための栄養戦略」開催のお知らせ</h4>
-        <p>2月15日（土）14:00より、当センターにて管理栄養士による講演会を開催いたします。参加無料・要予約。</p>
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21.5 9.5c0 6-5.5 14.5-9.5 14.5S2.5 15.5 2.5 9.5C2.5 4.8 6.8.5 12 .5s9.5 4.3 9.5 9z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>多職種連携医療</strong>
+            医師、理学療法士、管理栄養士、心理カウンセラーなど専門スタッフによるチーム医療
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>最新設備・技術</strong>
+            MRI、CT、三次元動作解析装置など最先端の医療機器による精密診断・分析
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>科学的アプローチ</strong>
+            エビデンスに基づいた診療とパフォーマンス向上のための科学的サポート
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>競技復帰支援</strong>
+            早期診断から治療、リハビリテーション、競技復帰まで一貫したサポート体制
+          </div>
+        </div>
       </div>
     </div>
-    <div class="news-item">
-      <div class="news-date">
-        <div>2025</div>
-        <div>01/10</div>
-      </div>
-      <div class="news-content">
-        <h4>スポーツ医学雑誌に当センターの研究論文が掲載されました</h4>
-        <p>「競技復帰期間短縮に向けた新しいリハビリテーションプロトコルの効果」について発表いたしました。</p>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-date">
-        <div>2024</div>
-        <div>12/25</div>
-      </div>
-      <div class="news-content">
-        <h4>年末年始の休診のお知らせ</h4>
-        <p>12月29日（日）から1月3日（金）まで休診とさせていただきます。緊急時は大学病院救急外来をご利用ください。</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="access" class="section">
-  <div class="section-title">
-    <h3>アクセス情報</h3>
-    <p>〇〇大学病院内にございます</p>
-  </div>
-  <div class="contact-info">
-    <div class="contact-item">
-      <div class="contact-icon">📍</div>
-      <div>
-        <h4>所在地</h4>
-        <p>〒000-0000 東京都〇〇区〇〇町1-1-1<br>〇〇大学病院 本館3階</p>
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="section-header">
+      <h3 class="section-title">診療内容</h3>
+      <p class="section-subtitle">Medical Services</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.5 12c0-1.05-.95-2-2-2-.19 0-.38.03-.56.08L13.5 6.6c.46-.45.5-1.18 0-1.68-.48-.48-1.24-.48-1.72 0L8.36 8.34c-.18-.05-.37-.08-.56-.08-1.05 0-2 .95-2 2s.95 2 2 2c.19 0 .38-.03.56-.08l3.44 3.42c-.46.45-.5 1.18 0 1.68.48.48 1.24.48 1.72 0l3.42-3.44c.18.05.37.08.56.08 1.05 0 2-.95 2-2z"/>
+          </svg>
+        </div>
+        <h4>スポーツ外傷・障害</h4>
+        <p>急性外傷から慢性障害まで、競技特性を考慮した専門的な診断・治療を行います。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.5 4A5.5 5.5 0 0 0 2 9.5c0 .5.09.98.26 1.43l5.24 5.24 5.24-5.24c.17-.45.26-.93.26-1.43A5.5 5.5 0 0 0 7.5 4z"/>
+          </svg>
+        </div>
+        <h4>リハビリテーション</h4>
+        <p>理学療法士による専門的なスポーツリハビリテーションプログラムを提供します。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <h4>パフォーマンス評価</h4>
+        <p>最新の測定機器による体力・運動機能の科学的評価とアドバイスを行います。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93c0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41c0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <h4>栄養指導</h4>
+        <p>管理栄養士による競技力向上と健康維持のための個別栄養指導を実施します。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+        </div>
+        <h4>メンタルサポート</h4>
+        <p>スポーツ心理学に基づいたメンタルトレーニングと心理カウンセリングを提供します。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 6H4c-1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25S13.24 13.25 12 13.25S9.75 12.24 9.75 11S10.76 8.75 12 8.75zM17 15.5c0 .28-.22.5-.5.5h-9c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h9c.28 0 .5.22.5.5z"/>
+          </svg>
+        </div>
+        <h4>メディカルチェック</h4>
+        <p>競技参加前の健康診断から定期的なコンディションチェックまで対応します。</p>
       </div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">🚇</div>
-      <div>
-        <h4>アクセス</h4>
-        <p>JR〇〇駅東口より徒歩5分<br>地下鉄〇〇線〇〇駅2番出口より徒歩3分</p>
-      </div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">🚗</div>
-      <div>
-        <h4>駐車場</h4>
-        <p>病院駐車場をご利用ください<br>30分まで無料、以降30分毎に200円</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="section">
-  <div class="section-title">
-    <h3>お問い合わせ</h3>
-    <p>お気軽にご相談ください</p>
-  </div>
-  <div class="contact-grid">
-    <div>
-      <form>
-        <div class="form-group">
-          <label for="name">お名前 *</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">メールアドレス *</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">電話番号</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-          <label for="sport">競技種目</label>
-          <input type="text" id="sport" name="sport" placeholder="例：サッカー、テニス、陸上競技">
-        </div>
-        <div class="form-group">
-          <label for="message">お問い合わせ内容 *</label>
-          <textarea id="message" name="message" rows="5" required placeholder="症状や相談内容をできるだけ詳しくお聞かせください"></textarea>
-        </div>
-        <button type="submit" class="submit-btn">送信する</button>
-      </form>
+  <!-- Flow Section -->
+  <section id="flow" class="section">
+    <div class="section-header">
+      <h3 class="section-title">受診の流れ</h3>
+      <p class="section-subtitle">Medical Flow</p>
     </div>
-    <div class="contact-info">
-      <h4 style="margin-bottom: 1.5rem; color: #1e3a8a;">診療予約・お問い合わせ</h4>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div>
-          <h4>電話予約</h4>
-          <p>03-1234-5678<br>
-          平日 9:00-17:00<br>
-          土曜 9:00-12:00</p>
+    <div class="flow-container">
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-number">1</div>
+          <h4>予約・お問い合わせ</h4>
+          <p>お電話またはWebフォームにて初診予約をお取りください。症状や競技歴についてお聞かせください。</p>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div>
-          <h4>メール</h4>
-          <p>info@sports-medical.ac.jp<br>
-          24時間受付（返信は営業時間内）</p>
+        <div class="flow-step">
+          <div class="flow-number">2</div>
+          <h4>問診・診察</h4>
+          <p>専門医による詳細な問診と身体診察を行い、症状の原因と程度を正確に把握します。</p>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🏥</div>
-        <div>
-          <h4>緊急時</h4>
-          <p>〇〇大学病院 救急外来<br>
-          03-1234-9999（24時間）</p>
+        <div class="flow-step">
+          <div class="flow-number">3</div>
+          <h4>検査・診断</h4>
+          <p>必要に応じてMRI、CT、超音波検査などの画像診断や各種機能検査を実施します。</p>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📋</div>
-        <div>
-          <h4>初診時の持参物</h4>
-          <p>・健康保険証<br>
-          ・紹介状（お持ちの場合）<br>
-          ・画像データ（MRI・CTなど）<br>
-          ・お薬手帳</p>
+        <div class="flow-step">
+          <div class="flow-number">4</div>
+          <h4>治療・リハビリ</h4>
+          <p>個別の治療プランに基づき、医学的治療とリハビリテーションを並行して行います。</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Staff Section -->
+  <section id="staff" class="section">
+    <div class="section-header">
+      <h3 class="section-title">スタッフ紹介</h3>
+      <p class="section-subtitle">Medical Staff</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-image">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="staff-info">
+          <h4>整形外科専門医</h4>
+          <p class="staff-role">日本整形外科学会専門医・日本スポーツ医学会認定スポーツドクター</p>
+          <p>スポーツ外傷・障害の診断・治療から手術まで、豊富な経験を持つ専門医チームが対応いたします。関節鏡手術や再生医療にも対応。</p>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-image">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="staff-info">
+          <h4>理学療法士</h4>
+          <p class="staff-role">日本理学療法士協会認定・スポーツリハビリテーション認定理学療法士</p>
+          <p>スポーツリハビリテーションのスペシャリスト。競技復帰に向けた機能回復訓練から予防指導まで幅広くサポート。</p>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-image">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="staff-info">
+          <h4>管理栄養士</h4>
+          <p class="staff-role">公認スポーツ栄養士・管理栄養士</p>
+          <p>スポーツ栄養学の専門知識を活かし、競技力向上と健康維持のための個別栄養指導を行います。サプリメント指導も実施。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="section">
+    <div class="section-header">
+      <h3 class="section-title">お知らせ・メディア掲載</h3>
+      <p class="section-subtitle">News & Media</p>
+    </div>
+    <div class="news-container">
+      <div class="news-item">
+        <div class="news-date">
+          <div>2025</div>
+          <div>01/20</div>
+        </div>
+        <div class="news-content">
+          <h4>新春特別講演会「アスリートのための栄養戦略」開催のお知らせ</h4>
+          <p>2月15日（土）14:00より、当センターにて公認スポーツ栄養士による講演会を開催いたします。参加無料・要予約。お電話またはWebフォームよりお申し込みください。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">
+          <div>2025</div>
+          <div>01/10</div>
+        </div>
+        <div class="news-content">
+          <h4>スポーツ医学雑誌に当センターの研究論文が掲載されました</h4>
+          <p>「競技復帰期間短縮に向けた新しいリハビリテーションプロトコルの効果検証」について、日本スポーツ医学会機関誌に発表いたしました。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">
+          <div>2024</div>
+          <div>12/25</div>
+        </div>
+        <div class="news-content">
+          <h4>年末年始の休診のお知らせ</h4>
+          <p>12月29日（日）から1月3日（金）まで休診とさせていただきます。緊急時は〇〇大学病院救急外来（03-1234-9999）をご利用ください。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">
+          <div>2024</div>
+          <div>12/15</div>
+        </div>
+        <div class="news-content">
+          <h4>全国大学スポーツ医学研究会にて発表を行いました</h4>
+          <p>当センターの取り組みについて「多職種連携によるアスリートサポートシステムの構築」というテーマで発表し、高い評価をいただきました。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access Section -->
+  <section id="access" class="section">
+    <div class="section-header">
+      <h3 class="section-title">アクセス情報</h3>
+      <p class="section-subtitle">Access Information</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>所在地</h4>
+            <p>〒000-0000<br>
+            東京都〇〇区〇〇町1-1-1<br>
+            〇〇大学医学部附属病院 本館3階</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H16V4a2 2 0 00-2-2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6h-8.13l.87.87z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>電車でのアクセス</h4>
+            <p>JR〇〇駅東口より徒歩5分<br>
+            地下鉄〇〇線〇〇駅2番出口より徒歩3分<br>
+            都営バス〇〇系統「大学病院前」下車すぐ</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11C5.84 5 5.28 5.42 5.08 6.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 16c-.55 0-1-.45-1-1s.45-1 1-1s1 .45 1 1s-.45 1-1 1zm-14 0c-.55 0-1-.45-1-1s.45-1 1-1s1 .45 1 1s-.45 1-1 1z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>お車でのアクセス</h4>
+            <p>首都高〇〇ICより約10分<br>
+            病院駐車場をご利用ください<br>
+            （30分まで無料、以降30分毎に200円）</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form" style="background: #f8f9fa; padding: 30px; border: 1px solid #e9ecef;">
+        <h4 style="color: #0066cc; margin-bottom: 20px; text-align: center;">診療時間のご案内</h4>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+          <tr style="background: #e9ecef;">
+            <td style="padding: 10px; border: 1px solid #ced4da; font-weight: bold; text-align: center;">曜日</td>
+            <td style="padding: 10px; border: 1px solid #ced4da; font-weight: bold; text-align: center;">午前</td>
+            <td style="padding: 10px; border: 1px solid #ced4da; font-weight: bold; text-align: center;">午後</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">月～金</td>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">9:00-12:00</td>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">14:00-17:00</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">土曜</td>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">9:00-12:00</td>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center; background: #f8f9fa;">休診</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ced4da; text-align: center;">日・祝</td>
+            <td colspan="2" style="padding: 8px; border: 1px solid #ced4da; text-align: center; background: #f8f9fa;">休診</td>
+          </tr>
+        </table>
+        <p style="font-size: 11px; color: #666; text-align: center; line-height: 1.6;">
+          ※完全予約制です<br>
+          ※緊急時は大学病院救急外来をご利用ください
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h3 class="section-title">お問い合わせ</h3>
+      <p class="section-subtitle">Contact Us</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h4 style="color: #0066cc; margin-bottom: 20px; text-align: center;">初診予約・お問い合わせフォーム</h4>
+        <form>
+          <div class="form-group">
+            <label for="name">お名前<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="age">年齢</label>
+            <select id="age" name="age">
+              <option value="">選択してください</option>
+              <option value="10代">10代</option>
+              <option value="20代">20代</option>
+              <option value="30代">30代</option>
+              <option value="40代">40代</option>
+              <option value="50代以上">50代以上</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sport">競技種目</label>
+            <input type="text" id="sport" name="sport" placeholder="例：サッカー、テニス、陸上競技">
+          </div>
+          <div class="form-group">
+            <label for="level">競技レベル</label>
+            <select id="level" name="level">
+              <option value="">選択してください</option>
+              <option value="趣味・健康維持">趣味・健康維持</option>
+              <option value="学生（中学・高校）">学生（中学・高校）</option>
+              <option value="学生（大学・専門学校）">学生（大学・専門学校）</option>
+              <option value="実業団・社会人">実業団・社会人</option>
+              <option value="プロ・セミプロ">プロ・セミプロ</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">お問い合わせ内容<span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="症状や相談内容をできるだけ詳しくお聞かせください&#10;&#10;例：&#10;・右膝の痛みが2週間続いている&#10;・パフォーマンス向上のための体力測定を希望&#10;・競技復帰に向けたリハビリテーションを相談したい"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h4 style="color: #0066cc; margin-bottom: 20px; text-align: center;">診療予約・お問い合わせ</h4>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>電話予約</h4>
+            <p><strong style="font-size: 16px; color: #0066cc;">03-1234-5678</strong><br>
+            平日 9:00-17:00<br>
+            土曜 9:00-12:00</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>メール</h4>
+            <p>info@sports-medical.ac.jp<br>
+            24時間受付<br>
+            （返信は営業時間内）</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.5 12c0-1.05-.95-2-2-2-.19 0-.38.03-.56.08L13.5 6.6c.46-.45.5-1.18 0-1.68-.48-.48-1.24-.48-1.72 0L8.36 8.34c-.18-.05-.37-.08-.56-.08-1.05 0-2 .95-2 2s.95 2 2 2c.19 0 .38-.03.56-.08l3.44 3.42c-.46.45-.5 1.18 0 1.68.48.48 1.24.48 1.72 0l3.42-3.44c.18.05.37.08.56.08 1.05 0 2-.95 2-2z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>緊急時</h4>
+            <p><strong style="color: #dc3545;">〇〇大学病院 救急外来</strong><br>
+            03-1234-9999<br>
+            （24時間対応）</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5 9c-1.38 0-2.5-1.12-2.5-2.5S7.62 6 9 6s2.5 1.12 2.5 2.5S10.38 11 9 11zm4 2.5h-8v-.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5v.5z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4>初診時の持参物</h4>
+            <p>・健康保険証<br>
+            ・紹介状（お持ちの場合）<br>
+            ・画像データ（MRI・CTなど）<br>
+            ・お薬手帳</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-section">
       <h4>〇〇大学スポーツ医学センター</h4>
       <p>〒000-0000<br>
       東京都〇〇区〇〇町1-1-1<br>
-      〇〇大学病院 本館3階</p>
-      <p>TEL: 03-1234-5678<br>
-      FAX: 03-1234-5679<br>
-      E-mail: info@sports-medical.ac.jp</p>
+      〇〇大学医学部附属病院 本館3階</p>
+      <p style="margin-top: 15px;">
+      <strong>TEL:</strong> 03-1234-5678<br>
+      <strong>FAX:</strong> 03-1234-5679<br>
+      <strong>E-mail:</strong> info@sports-medical.ac.jp</p>
     </div>
     <div class="footer-section">
       <h4>診療時間</h4>
-      <p><strong>平日</strong><br>
+      <p><strong>平日（月～金）</strong><br>
       午前 9:00-12:00<br>
       午後 14:00-17:00</p>
       <p><strong>土曜</strong><br>
       午前 9:00-12:00</p>
       <p><strong>休診日</strong><br>
-      日曜・祝日・年末年始</p>
+      日曜・祝日・年末年始<br>
+      ※完全予約制</p>
     </div>
     <div class="footer-section">
       <h4>関連リンク</h4>
-      <p><a href="#">〇〇大学病院</a><br>
-      <a href="#">〇〇大学医学部</a><br>
-      <a href="#">日本スポーツ医学会</a><br>
-      <a href="#">日本整形外科学会</a><br>
-      <a href="#">アンチドーピング機構</a></p>
+      <a href="#">〇〇大学医学部附属病院</a>
+      <a href="#">〇〇大学医学部</a>
+      <a href="#">日本スポーツ医学会</a>
+      <a href="#">日本整形外科学会</a>
+      <a href="#">日本リハビリテーション医学会</a>
+      <a href="#">日本スポーツ理学療法学会</a>
+      <a href="#">公認スポーツ栄養士会</a>
     </div>
     <div class="footer-section">
-      <h4>認定・所属学会</h4>
-      <p>・日本スポーツ医学会認定施設<br>
+      <h4>認定・所属</h4>
+      <p>・日本スポーツ医学会認定医療機関<br>
       ・日本整形外科学会専門医制度研修施設<br>
       ・日本リハビリテーション医学会研修施設<br>
-      ・スポーツドクター認定施設</p>
+      ・スポーツドクター認定施設<br>
+      ・アンチドーピング機構認定施設</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 〇〇大学スポーツ医学センター All Rights Reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">プライバシーポリシー</a> | <a href="#" style="color: rgba(255,255,255,0.7);">サイトマップ</a></p>
+    <p>&copy; 2025 〇〇大学スポーツ医学センター All Rights Reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">プライバシーポリシー</a> | <a href="#" style="color: rgba(255,255,255,0.7);">サイトマップ</a> | <a href="#" style="color: rgba(255,255,255,0.7);">お問い合わせ</a></p>
   </div>
 </footer>
 
@@ -889,9 +1347,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const navHeight = document.querySelector('.nav').offsetHeight;
+      const targetPosition = target.offsetTop - navHeight - 20;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
     }
   });
@@ -900,21 +1360,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form submission handler
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
-  alert('お問い合わせを受け付けました。2-3営業日以内にご返信させていただきます。');
+  
+  // Get form data
+  const formData = new FormData(this);
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const message = formData.get('message');
+  
+  // Basic validation
+  if (!name || !email || !message) {
+    alert('必須項目を入力してください。');
+    return;
+  }
+  
+  // Success message
+  alert('お問い合わせを受け付けました。\n2-3営業日以内にご返信させていただきます。\n\n緊急の場合は、お電話（03-1234-5678）にてお問い合わせください。');
   this.reset();
 });
 
 // Add scroll effect to navigation
+let lastScrollTop = 0;
 window.addEventListener('scroll', function() {
-  const nav = document.querySelector('.nav-container');
-  if (window.scrollY > 100) {
-    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+  const nav = document.querySelector('.nav');
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > 100) {
+    nav.style.boxShadow = '0 2px 10px rgba(0, 102, 204, 0.1)';
+    nav.style.background = '#0066cc';
   } else {
     nav.style.boxShadow = 'none';
+    nav.style.background = '#0066cc';
   }
+  
+  lastScrollTop = scrollTop;
 });
 
-// Add animation on scroll for sections
+// Add active state to navigation links
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+  
+  let currentSection = '';
+  const scrollPosition = window.scrollY + 200;
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.style.background = 'transparent';
+    if (link.getAttribute('href') === `#${currentSection}`) {
+      link.style.background = 'rgba(255, 255, 255, 0.1)';
+    }
+  });
+});
+
+// Add fade-in animation on scroll
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -929,11 +1435,98 @@ const observer = new IntersectionObserver(function(entries) {
   });
 }, observerOptions);
 
+// Apply fade-in animation to sections
 document.querySelectorAll('.section').forEach(section => {
   section.style.opacity = '0';
   section.style.transform = 'translateY(30px)';
   section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
   observer.observe(section);
+});
+
+// Apply fade-in animation to cards
+document.querySelectorAll('.service-card, .staff-card, .feature-item').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(card);
+});
+
+// Add hover effects for service cards
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-5px)';
+    this.style.boxShadow = '0 10px 25px rgba(0, 102, 204, 0.15)';
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+    this.style.boxShadow = '0 5px 15px rgba(0, 102, 204, 0.1)';
+  });
+});
+
+// Add hover effects for staff cards
+document.querySelectorAll('.staff-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-3px)';
+    this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+  });
+});
+
+// Form field focus effects
+document.querySelectorAll('input, select, textarea').forEach(field => {
+  field.addEventListener('focus', function() {
+    this.style.borderColor = '#0066cc';
+    this.style.boxShadow = '0 0 0 2px rgba(0, 102, 204, 0.1)';
+  });
+  
+  field.addEventListener('blur', function() {
+    this.style.borderColor = '#ced4da';
+    this.style.boxShadow = 'none';
+  });
+});
+
+// News items hover effect
+document.querySelectorAll('.news-item').forEach(item => {
+  item.addEventListener('mouseenter', function() {
+    this.style.backgroundColor = '#f8f9fa';
+    this.style.cursor = 'pointer';
+  });
+  
+  item.addEventListener('mouseleave', function() {
+    this.style.backgroundColor = 'transparent';
+  });
+});
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+  // Add smooth reveal for hero content
+  const heroContent = document.querySelector('.hero-content');
+  heroContent.style.opacity = '0';
+  heroContent.style.transform = 'translateY(30px)';
+  
+  setTimeout(() => {
+    heroContent.style.transition = 'opacity 1s ease, transform 1s ease';
+    heroContent.style.opacity = '1';
+    heroContent.style.transform = 'translateY(0)';
+  }, 300);
+  
+  // Add staggered animation for vision/mission boxes
+  const visionMission = document.querySelectorAll('.vision-box, .mission-box');
+  visionMission.forEach((box, index) => {
+    box.style.opacity = '0';
+    box.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      box.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      box.style.opacity = '1';
+      box.style.transform = 'translateY(0)';
+    }, 600 + (index * 200));
+  });
 });
 </script>
 
